@@ -1,0 +1,1071 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.12",
+		"sources": {
+			"0": {
+				"name": "http://192.2.0.1:8086",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 26,
+		"cells": [
+			{
+				"i": "446bd793-0e6f-4515-a7d9-befc1be83420",
+				"x": 9,
+				"y": 0,
+				"w": 3,
+				"h": 1,
+				"name": "Measurements - :host: - all databases",
+				"queries": [
+					{
+						"query": "SELECT sum(\"last\") AS \"Measurements\" FROM (SELECT last(\"numMeasurements\") FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY \"database\")",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT sum(\"last\") AS \"Measurements\" FROM (SELECT last(\"numMeasurements\") FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY \"database\")",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/446bd793-0e6f-4515-a7d9-befc1be83420"
+				}
+			},
+			{
+				"i": "9d25dc8c-b0a6-43e9-a678-f6fbd1312fe4",
+				"x": 6,
+				"y": 0,
+				"w": 3,
+				"h": 1,
+				"name": "Time Series - :host: - all databases",
+				"queries": [
+					{
+						"query": "SELECT sum(\"last\") AS \"Time Series\" FROM (SELECT last(\"numSeries\") FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY \"database\")",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT sum(\"last\") AS \"Time Series\" FROM (SELECT last(\"numSeries\") FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY \"database\")",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/9d25dc8c-b0a6-43e9-a678-f6fbd1312fe4"
+				}
+			},
+			{
+				"i": "2c98803a-ba76-4b1b-a0b7-6ef983e15d92",
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "Measurements - :host: - all databases",
+				"queries": [
+					{
+						"query": "SELECT last(\"numMeasurements\") AS \"Measurements\" FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:),\"database\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "influxdb_database",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Measurements",
+									"args": [
+										{
+											"value": "numMeasurements",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"database"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "measurements",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "1fa9e808-3bd6-41d4-b819-3cdc1934ae1c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "033ab870-2424-46a8-b5d0-e42b14a7bb8f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b6b0160-bf23-45f6-9b38-fb97bd614879",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/2c98803a-ba76-4b1b-a0b7-6ef983e15d92"
+				}
+			},
+			{
+				"i": "71d1587f-333c-4f55-bbc5-cad3d7421ce2",
+				"x": 6,
+				"y": 1,
+				"w": 6,
+				"h": 3,
+				"name": "Time Series - :host: - all databases",
+				"queries": [
+					{
+						"query": "SELECT last(\"numSeries\") AS \"Time Series\" FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' GROUP BY time(:interval:),\"database\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "influxdb_database",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Time Series",
+									"args": [
+										{
+											"value": "numSeries",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"database"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "series",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "1fa9e808-3bd6-41d4-b819-3cdc1934ae1c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "033ab870-2424-46a8-b5d0-e42b14a7bb8f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b6b0160-bf23-45f6-9b38-fb97bd614879",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/71d1587f-333c-4f55-bbc5-cad3d7421ce2"
+				}
+			},
+			{
+				"i": "70ea6f36-3f18-4342-b974-68a5a76d909c",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "Measurements - :host: - :database:",
+				"queries": [
+					{
+						"query": "SELECT last(\"numMeasurements\") AS \"Measurements\" FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' AND \"database\"=':database:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "influxdb_database",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Measurements",
+									"args": [
+										{
+											"value": "numMeasurements",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"database": [
+									":database:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "measurements",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "1fa9e808-3bd6-41d4-b819-3cdc1934ae1c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "033ab870-2424-46a8-b5d0-e42b14a7bb8f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b6b0160-bf23-45f6-9b38-fb97bd614879",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/70ea6f36-3f18-4342-b974-68a5a76d909c"
+				}
+			},
+			{
+				"i": "7d06958a-a346-40dd-9812-0fc48bcb4e27",
+				"x": 0,
+				"y": 1,
+				"w": 6,
+				"h": 3,
+				"name": "Time Series - :host: - :database:",
+				"queries": [
+					{
+						"query": "SELECT last(\"numSeries\") AS \"Time Series\" FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' AND \"database\"=':database:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "influxdb_database",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Time Series",
+									"args": [
+										{
+											"value": "numSeries",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"database": [
+									":database:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "series",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "1fa9e808-3bd6-41d4-b819-3cdc1934ae1c",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "033ab870-2424-46a8-b5d0-e42b14a7bb8f",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9b6b0160-bf23-45f6-9b38-fb97bd614879",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/7d06958a-a346-40dd-9812-0fc48bcb4e27"
+				}
+			},
+			{
+				"i": "00cde1d0-8a2b-4b95-a4c4-11629d954c1b",
+				"x": 0,
+				"y": 0,
+				"w": 3,
+				"h": 1,
+				"name": "Time Series - :host: - :database:",
+				"queries": [
+					{
+						"query": "SELECT last(\"numSeries\") AS \"Time Series\" FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' AND \"database\"=':database:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "influxdb_database",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Time Series",
+									"args": [
+										{
+											"value": "numSeries",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"database": [
+									":database:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/00cde1d0-8a2b-4b95-a4c4-11629d954c1b"
+				}
+			},
+			{
+				"i": "e4aa8989-a048-4c30-b9fe-a9c834bab4b0",
+				"x": 3,
+				"y": 0,
+				"w": 3,
+				"h": 1,
+				"name": "Measurements - :host: - :database:",
+				"queries": [
+					{
+						"query": "SELECT last(\"numMeasurements\") AS \"Measurements\" FROM \"telegraf\"..\"influxdb_database\" WHERE time > :dashboardTime: AND \"host\"=':host:' AND \"database\"=':database:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "influxdb_database",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Measurements",
+									"args": [
+										{
+											"value": "numMeasurements",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"database": [
+									":database:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/cells/e4aa8989-a048-4c30-b9fe-a9c834bab4b0"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":host:",
+				"values": [
+					{
+						"value": "lab1",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "d5ff4ba4-bcd7-4953-b442-f814edee1f71",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"influxdb\" WITH KEY=\"host\"",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/templates/d5ff4ba4-bcd7-4953-b442-f814edee1f71"
+				}
+			},
+			{
+				"tempVar": ":database:",
+				"values": [
+					{
+						"value": "telegraf",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "e47beba6-b487-431d-83e8-1e6cd6bf7665",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"influxdb_database\" WITH KEY=\"database\" WHERE \"host\"=':host:'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"links": {
+					"self": "/chronograf/v1/dashboards/26/templates/e47beba6-b487-431d-83e8-1e6cd6bf7665"
+				}
+			}
+		],
+		"name": "InfluxDB: Databases",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/26",
+			"cells": "/chronograf/v1/dashboards/26/cells",
+			"templates": "/chronograf/v1/dashboards/26/templates"
+		}
+	}
+}

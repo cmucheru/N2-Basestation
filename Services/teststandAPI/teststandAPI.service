@@ -1,0 +1,24 @@
+[Unit]
+
+Description=Test stand API for frontend
+After=docker_backend.service
+Requires=docker_backend.service
+
+[Service]
+
+# Type of service
+Type=simple
+
+# TODO figure out to stop using the shell script
+# Main task
+ExecStart=/home/pi/VENVS/n2basestation/bin/python3 /home/pi/Nakuja/n2Basestation/Services/teststandAPI/TSAPI_Service.py
+
+# Required to see Python output in logs
+Environment="PYTHONUNBUFFERED=x"
+
+# Uncomment this to see debug messages
+Environment="DEBUG=true"
+
+# If the script ever dies, restart it
+Restart=always
+RestartSec=30

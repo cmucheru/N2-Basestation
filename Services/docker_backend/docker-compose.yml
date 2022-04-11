@@ -1,0 +1,74 @@
+version: '3'
+
+services:
+  rabbitmq:
+    # This is the rabbitmq service. This will be used us our messaging broker
+    build: .
+    image: mqtt-rabbitmq
+    container_name: nakuja-mqtt
+    # TODO set environment values as secret local environment variables
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=sVNduj5kjHBjkRqjPk42nNKGMknVRxv3FtjmRwr4gZZ65UwZrKtZzF4abafJ
+      - RABBITMQ_DEFAULT_USER=nakuja
+      - RABBITMQ_DEFAULT_PASS=aVesSaVQVKjE8JCKrpTEheYERDWdfM
+      - RABBITMQ_DEFAULT_VHOST=/
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+      - "1883:1883"
+
+  influxdb:
+    # This is the influxdb service. This will be used us our timeseries database to stop our data
+    image: arm64v8/influxdb:1.7
+    container_name: nakuja-influxdb
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb
+      - ./influxdb/config/:/etc/influxdb/
+    ports:
+      - "8086:8086"
+      - "8082:8082"
+      - "8089:8089/udp"
+    # TODO set environment values as secret local environment variables
+    environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER=nakuja
+      - INFLUXDB_ADMIN_PASSWORD=C3hcAZuH6YJRqeWqH52dtHp5MjgRDT
+      - INFLUXDB_ADMIN_ENABLED=true
+
+  telegraf:
+    # This is the telegraf service. This will be used us our messaging handler to read data from mqtt and send it to our database
+    image: telegraf:latest
+    container_name: nakuja-telegraf
+    environment:
+      HOSTNAME: "telegraf-getting-started"
+    links:
+      - influxdb
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - rabbitmq
+      - influxdb
+
+  grafana:
+    # This is the grafana service. This will be used us our backend visualisation platform
+    image: grafana/grafana:latest
+    container_name: nakuja-grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./grafana/etc/provisioning:/etc/grafana/provisioning
+      - ./grafana/data/:/var/lib/grafana
+    depends_on:
+      - influxdb
+    links:
+      - influxdb
+    # TODO set environment values as secret local environment variables
+    environment:
+      - GF_SECURITY_ADMIN_USER=nakuja
+      - GF_SECURITY_ADMIN_PASSWORD=SJfhaWq5DpQYn8hGjPuJQR2TeBv5CW
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+    user: "0"
+
+# TODO set nginx as our proxy manager

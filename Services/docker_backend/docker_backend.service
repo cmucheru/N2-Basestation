@@ -1,0 +1,20 @@
+[Unit]
+
+Description=Pushes data from serial to influxdb and visualizes it
+
+[Service]
+
+# Type of service
+Type=simple
+
+# TODO figure out to stop using the shell script
+# Main task
+ExecStart=sh /home/pi/NakujaN2/n2Basestation/Services/docker_backend/start.sh
+# ExecStop=sh /home/pi/NakujaN2/n2Basestation/Services/docker_backend/stop.sh
+
+# Uncomment this to see debug messages
+Environment="DEBUG=true"
+
+# If the script ever dies, restart it
+Restart=always
+RestartSec=30

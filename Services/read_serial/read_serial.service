@@ -1,0 +1,23 @@
+[Unit]
+
+Description=Read the serial port for data from the load cell
+After=docker_backend.service
+Requires=docker_backend.service
+
+[Service]
+
+# Type of service
+Type=simple
+
+# Main task
+ExecStart=/home/pi/VENVS/n2basestation/bin/python3 /home/pi/Nakuja/n2Basestation/Services/read_serial/RS_Service.py
+
+# Required to see Python output in logs
+Environment="PYTHONUNBUFFERED=x"
+
+# Uncomment this to see debug messages
+Environment="DEBUG=true"
+
+# If the script ever dies, restart it
+# Restart=always
+# RestartSec=30
