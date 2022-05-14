@@ -1,2 +1,2 @@
-# n2Basestation
-This repository contains N2 base station for telemetry together with testing our rocket motors
+# N-2 Basestation
+This a test repository for N2 rocket ground software.
